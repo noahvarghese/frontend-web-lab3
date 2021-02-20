@@ -3,9 +3,10 @@
 body {
     padding: 0;
     margin: 0;
-    font-family: 'Open Sans', sans-serif;
+    font-family: "Open Sans", sans-serif;
     font-size: 16px;
     font-weight: 300;
+    background-color: #f9f9f9;
 }
 
 .container {
@@ -13,7 +14,7 @@ body {
 }
 
 button {
-    background: #02A8F9;
+    background: #02a8f9;
     border-radius: 4px;
     border: none;
     padding: 14px 26px;
@@ -26,7 +27,7 @@ button {
 /* Nav */
 
 .nav {
-    background-image: linear-gradient(179deg, #05D3FD 0%, #02A8F9 100%);
+    background-image: linear-gradient(179deg, #05d3fd 0%, #02a8f9 100%);
     height: 72px;
     display: grid;
     grid-template-columns: 180px 1fr;
@@ -76,10 +77,10 @@ button {
     .nav .nav-items-desktop {
         display: none;
     }
-    
+
     .nav .nav-items-mobile {
         display: block;
-    }    
+    }
 }
 
 /* Hero */
@@ -132,7 +133,7 @@ button {
 .content {
     max-width: 1140px;
     margin: auto;
-    color: #5C5C5C;
+    color: #5c5c5c;
 }
 
 .content h1 {
@@ -273,7 +274,6 @@ button {
     }
 }
 
-
 /* Signup Form */
 
 .signup-form {
@@ -335,9 +335,9 @@ button {
 footer {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
-    background: #4D4D4D;
+    background: #4d4d4d;
     padding: 40px;
-    color: #C2C2C2;
+    color: #c2c2c2;
 }
 
 footer a {
@@ -379,5 +379,168 @@ footer .navigation .social a {
     footer .address {
         margin-bottom: 20px;
     }
+}
+/* Blog */
 
+.content {
+    min-width: 100%;
+    max-width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+    justify-content: center;
+    margin: auto;
+}
+.bannerContainer {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    width: 1250px;
+    height: 450px;
+    max-width: 95%;
+    max-height: 30vh;
+    border-radius: 25px;
+    margin-top: 5em;
+}
+
+.bannerContainer > img {
+    z-index: 1;
+    position: absolute;
+    width: 100%;
+    transition: transform 0.2s ease-in-out;
+}
+
+.bannerContainer:hover > img {
+    transform: scale(1.1);
+}
+
+.title {
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+}
+
+.description,
+.byline {
+    max-width: 95%;
+    width: 700px;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.byline {
+    color: #8d8d8d;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+    margin: 2rem;
+    font-size: 1rem;
+}
+
+.share {
+    max-width: 95%;
+    width: 500px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+}
+
+.share > a > img {
+    width: 30px;
+}
+
+.body {
+    margin-bottom: 4rem;
+    max-width: 95%;
+    width: 900px;
+}
+
+/* Main page */
+
+.mainContent {
+    max-width: 95%;
+    width: 95%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-self: space-evenly;
+    margin: auto;
+}
+
+.flipCard {
+    background-color: transparent;
+    perspective: 1000px;
+    max-width: 400px;
+    width: 400px;
+    height: 533px;
+    max-height: 533px;
+    min-height: 283px;
+    min-width: 250px;
+    flex: 1 0 400px;
+    margin-top: 1rem;
+    margin-bottom: 10px;
+    position: relative;
+    top: 0;
+    transition: top 0.6s ease;
+    margin: 5rem auto;
+}
+.flipCard .innerCard {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    transform: rotateY(180deg);
+    border-radius: 10px;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.3), 0 12px 40px 0 rgba(0, 0, 0, 0.29);
+}
+.flipCard .innerCard .frontCard,
+.flipCard .innerCard .backCard {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    border-radius: 10px;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-radius: 10px;
+}
+.flipCard .innerCard .frontCard {
+    transform: rotateY(180deg);
+}
+.flipCard .innerCard .frontCard img {
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+    border-radius: 10px;
+}
+.flipCard .innerCard .backCard {
+    background-color: white;
+    padding: 1rem;
+    text-align: left;
+    top: 0;
+}
+.flipCard .innerCard .backCard .productHeader hr {
+    margin-left: 0;
+    margin-top: 0.25rem;
+}
+.flipCard .innerCard .backCard .productContents {
+    margin-top: 50%;
+}
+.flipCard .innerCard .backCard .productContents p {
+    margin-bottom: 1rem;
+}
+.flipCard:hover {
+    top: 10px;
+}
+.flipCard:hover .innerCard {
+    transform: rotateY(0deg);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
